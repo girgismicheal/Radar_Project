@@ -213,7 +213,7 @@ for i = 1+Tr+Gr:(Nr/2 - (Gr+Tr))
     for j = 1+Td+Gd:(Nd - (Gd+Td))
         % For every iteration sum the signal level within all the training cells.
         % To sum convert the value from logarithmic to linear using db2pow function.
-        sum_all_cells = sum(db2pow( RDM(i-(Tr+Gr):i+Tr+Gr, j-(Td+Gd):j+Td+Gd)) , 'all');
+        sum_cells = sum(db2pow( RDM(i-(Tr+Gr):i+Tr+Gr, j-(Td+Gd):j+Td+Gd)) , 'all');
         sum_excl_cells_only  = sum(db2pow( RDM(i-Gr:i+Gr, j-Gd:j+Gd)) , 'all');
         noise_level = sum_cells - sum_excl_cells_only;
 
